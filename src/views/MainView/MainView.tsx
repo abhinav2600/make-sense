@@ -9,8 +9,6 @@ import { EditorFeatureData, IEditorFeature } from '../../data/info/EditorFeature
 import { styled, Tooltip, tooltipClasses, TooltipProps } from '@mui/material';
 import Fade from '@mui/material/Fade';
 import ImagesDropZone from './ImagesDropZone/ImagesDropZone';
-import {ContextManager} from "../../logic/context/ContextManager";
-import {ContextType} from "../../data/enums/ContextType";
 
 const MainView: React.FC = () => {
     const [projectInProgress, setProjectInProgress] = useState(false);
