@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import './MainView.scss';
 import { TextButton } from '../Common/TextButton/TextButton';
 import classNames from 'classnames';
@@ -9,6 +9,8 @@ import { EditorFeatureData, IEditorFeature } from '../../data/info/EditorFeature
 import { styled, Tooltip, tooltipClasses, TooltipProps } from '@mui/material';
 import Fade from '@mui/material/Fade';
 import ImagesDropZone from './ImagesDropZone/ImagesDropZone';
+import {ContextManager} from "../../logic/context/ContextManager";
+import {ContextType} from "../../data/enums/ContextType";
 
 const MainView: React.FC = () => {
     const [projectInProgress, setProjectInProgress] = useState(false);
@@ -87,6 +89,14 @@ const MainView: React.FC = () => {
             </div>;
         });
     };
+
+    useEffect(() => {
+
+        setProjectInProgress(true);
+
+    }, []);
+
+    // setProjectInProgress(true);
 
     return (
         <div className={getClassName()}>
