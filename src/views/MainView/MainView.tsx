@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import './MainView.scss';
 import { TextButton } from '../Common/TextButton/TextButton';
 import classNames from 'classnames';
@@ -87,6 +87,14 @@ const MainView: React.FC = () => {
             </div>;
         });
     };
+
+    useEffect(() => {
+
+        setProjectInProgress(true);
+
+    }, []);
+
+    // setProjectInProgress(true);
 
     return (
         <div className={getClassName()}>
